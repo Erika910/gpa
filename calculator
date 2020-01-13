@@ -1,0 +1,89 @@
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
+/**
+ * Write a description of class Calculator here.
+ *
+ * @author Erika
+ * @version 1/9/20
+ */
+public class Calculator
+{
+    private static DecimalFormat df = new DecimalFormat("0.00");
+    public static void main()
+    {
+        double points = 0.0;
+
+        System.out.println("");
+        for(int i = 1;i <=7;i++)
+        {
+            System.out.println("Is your class weighted?");
+            String class1 = UserInput.getString();
+
+            System.out.println("What is your grade in the class? ");
+            String class1grade = UserInput.getString();
+            if(class1.indexOf("yes") > -1)
+            {
+                if(class1grade.indexOf("A") > -1)
+                {
+                    points += 5.0;
+                }
+
+                if(class1grade.indexOf("B") > -1)
+                {
+                    points += 4.0;
+                }
+
+                if(class1grade.indexOf("C") > -1)
+                {
+                    points += 3.0;
+                }
+
+                if(class1grade.indexOf("D") > -1)
+                {
+                    points += 1.0;
+                }
+
+                if(class1grade.indexOf("F") > -1)
+                {
+                    points += 0.0;
+                }
+
+            }
+
+            if(class1.indexOf("no") > -1)
+            {
+
+                if(class1grade.indexOf("A") > -1)
+                {
+                    points += 4.0;
+                }
+
+                if(class1grade.indexOf("B") > -1)
+                {
+                    points += 3.0;
+                }
+
+                if(class1grade.indexOf("C") > -1)
+                {
+                    points += 2.0;
+                }
+
+                if(class1grade.indexOf("D") > -1)
+                {
+                    points += 1.0;
+                }
+
+                if(class1grade.indexOf("F") > -1)
+                {
+                    points += 0.0;
+                }
+            }
+            else
+            {
+                System.out.println("Try Again");
+                System.exit(1);
+            }
+        }
+        System.out.println(df.format(points/7));
+    }
+}
