@@ -1,0 +1,19 @@
+import java.util.Scanner;
+/**
+ * Write a description of class UserInput here.
+ * Convenience class for getting input from user
+ *
+ * @author (your name)
+ * @version (a version number or a date)
+ */
+public class UserInput
+{
+    /**
+     * this scanner enables the user to enter input through text
+     */
+    public static String getString()
+    {
+        Scanner in = new Scanner(System.in);
+        return in.next();
+    }
+}
